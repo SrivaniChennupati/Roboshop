@@ -68,6 +68,9 @@ validate $? "downloading Artifact"
 
 cd /app &>>$Log_file
 
+validate $? "Moving into App Directory"
+
+
 unzip /tmp/catalogue.zip &>>$Log_file
 
 validate $? "Unzipping the Artfacts"
