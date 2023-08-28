@@ -50,7 +50,7 @@ validate $? "Artifact Download"
 
 cd /usr/share/nginx/html
 
-unzip /tmp/web.zip
+unzip /tmp/web.zip &>>$Log_file
 
 systemctl restart nginx 
 
