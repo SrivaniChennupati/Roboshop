@@ -23,7 +23,7 @@ fi
 
 user_id=$(id -u)
 
-if [ user_id -ne 0 ] 
+if [ $user_id -ne 0 ] 
 then
     echo "$R ERROR : This command has to run with the Root Access $N"
     exit 1 
