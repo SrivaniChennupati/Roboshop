@@ -56,7 +56,16 @@ systemctl restart nginx
 
 validate $? "NGINX Restaring"
 
-cp /home/centos/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf
+cp /home/centos/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>$Log_file
+
+validate $? "Copying/Creating the Reverse Proxy conf file"
+
+systemctl restart nginx &>>$Log_file
+
+
+
+
+
 
 
 

@@ -70,17 +70,7 @@ cd /app &>>$Log_file
 
 validate $? "Moving into App Directory"
 
-$(ls -A)
-
-if [ $? -ne 0 ]
-then
-    echo "Folder is Already Unzipped"
-else 
-
- unzip /tmp/catalogue.zip &>>$Log_file
-
-fi
-#unzip /tmp/catalogue.zip &>>$Log_file
+unzip /tmp/catalogue.zip &>>$Log_file
 
 validate $? "Unzipping the Artfacts"
 
