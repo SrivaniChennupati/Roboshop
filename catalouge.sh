@@ -84,11 +84,11 @@ systemctl daemon-reload &>>$Log_file
 
 validate $? "Loading the Catalouge Service"
 
-systemctl enable catalogue
+systemctl enable catalouge &>>$Log_file
 
 validate $? "Enabling the Catalouge Service"
 
-systemctl start catalogue
+systemctl start catalouge &>>$Log_file
 
 validate $? "Starting the Catalouge Service"
 
