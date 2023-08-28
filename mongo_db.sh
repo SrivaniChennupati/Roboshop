@@ -23,9 +23,9 @@ fi
 
 }
 
-if [ $user_id -eq 0 ]
+if [ $user_id -ne 0 ]
 then
-    echo "$R ERROR : This should be Run with the Root Access $N"
+    echo -e "$R ERROR : This should be Run with the Root Access $N"
     exit 1
 fi
 
