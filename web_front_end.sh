@@ -56,6 +56,8 @@ systemctl restart nginx
 
 validate $? "NGINX Restaring"
 
+cp /home/centos/Roboshop/roboshop.conf /etc/nginx/default.d/roboshop.conf
+
 
 
 
