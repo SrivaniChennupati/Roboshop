@@ -62,7 +62,6 @@ validate $? "Copying/Creating the Reverse Proxy conf file"
 
 systemctl restart nginx &>>$Log_file
 
-
 validate $? "Restarting NGINX"
 
 
