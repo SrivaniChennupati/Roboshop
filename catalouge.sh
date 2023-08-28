@@ -38,7 +38,7 @@ yum install nodejs -y &>>$Log_file
 
 validate $? "Installing NodeJS"
 
-id roboshop
+id roboshop &>>$Log_file
 
 if [ $? -ne 0 ]
 then 
