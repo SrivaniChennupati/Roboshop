@@ -34,13 +34,13 @@ yum install nginx -y &>>$Log_file
 
 validate $? "NGINX Installation"
 
-systemctl enable nginx 
+systemctl enable nginx &>>$Log_file 
 
-validate $? "NGINX Enabled"
+validate $? "NGINX Enabling"
 
-systemctl start nginx 
+systemctl start nginx &>>$Log_file
 
-validate $? "NGINX Started"
+validate $? "NGINX Starting"
 
 rm -rf /usr/share/nginx/html/*
 
