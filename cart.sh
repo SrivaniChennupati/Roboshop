@@ -70,7 +70,7 @@ cd /app &>>$Log_file
 
 validate $? "Moving into App Directory"
 
-unzip /tmp/cart.zip &>>$Log_file
+unzip -o /tmp/cart.zip &>>$Log_file
 
 validate $? "Unzipping the Cart Artfact"
 
