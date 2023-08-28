@@ -30,7 +30,7 @@ then
 
 fi
 
-curl -o https://rpm.nodesource.com/setup_lts.x | bash &>> $Log_file
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>> $Log_file
 
 validate $? "Setting up the NodeJS Repo"
 
