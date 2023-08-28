@@ -62,7 +62,7 @@ else
 
 fi
 
-curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>>$Log_file
+curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>>$Log_file
 
 validate $? "downloading Artifact"
 
@@ -93,4 +93,3 @@ validate $? "Enabling the cart Service"
 systemctl start cart &>>$Log_file
 
 validate $? "Starting the cart Service"
-
