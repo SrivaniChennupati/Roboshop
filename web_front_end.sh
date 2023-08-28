@@ -32,21 +32,21 @@ fi
 
 yum install nginx -y &>>$Log_file
 
-valiadate $? "NGINX Installation"
+validate $? "NGINX Installation"
 
 systemctl enable nginx 
 
-valiadate $? "NGINX Enabled"
+validate $? "NGINX Enabled"
 
 systemctl start nginx 
 
-valiadate $? "NGINX Started"
+validate $? "NGINX Started"
 
 rm -rf /usr/share/nginx/html/*
 
 curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
 
-valiadate $? "Artifact Download"
+validate $? "Artifact Download"
 
 cd /usr/share/nginx/html
 
@@ -54,7 +54,7 @@ unzip /tmp/web.zip
 
 systemctl restart nginx 
 
-valiadate $? "NGINX Restaring"
+validate $? "NGINX Restaring"
 
 
 
