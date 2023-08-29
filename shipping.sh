@@ -98,7 +98,7 @@ yum install mysql -y &>>$Log_file
 
 validate $? "Installing mysql client"
 
-mysql -h mysql.devopsvani.online -uroot -pRoboShop@1 < /app/schema/shipping.sql &>>$Log_file
+mysql -h mysql.devopsvani.online -uroot -pRoboShop@1 </app/schema/shipping.sql &>>$Log_file
 
 validate $? "loading the schema to mysql db"
 
