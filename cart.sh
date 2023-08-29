@@ -50,6 +50,18 @@ else
 
 fi 
 
+cd /app &>>$Log_file
+
+if [ $? -ne 0 ]
+then 
+    echo -e  " $R ERROR : No such File/Directory.$N Lets create the Directory......"
+    mkdir /app &>>$Log_file
+    validate $? "Creating a directory"
+else 
+  echo "Directory Created already"
+
+fi
+
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>>$Log_file
 
 validate $? "Downloading cart Artifact"
