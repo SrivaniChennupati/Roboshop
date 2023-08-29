@@ -30,7 +30,7 @@ then
 
 fi
 
-yum install maven -y
+yum install maven -y &>>$Log_file
 
 validate $? "Installing the Maven"
 
@@ -66,7 +66,7 @@ cd /app &>>$Log_file
 
 validate $? "Moving to App directory"
 
-unzip /tmp/shipping.zip &>>$Log_file
+unzip -o /tmp/shipping.zip &>>$Log_file
 
 validate $? "unzipping the shipping package"
 
@@ -98,7 +98,7 @@ yum install mysql -y &>>$Log_file
 
 validate $? "Installing mysql client"
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql &>>$Log_file
+mysql -h mysql.devopsvani.online -uroot -pRoboShop@1 < /app/schema/shipping.sql &>>$Log_file
 
 validate $? "loading the schema to mysql db"
 
