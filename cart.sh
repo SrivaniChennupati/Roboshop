@@ -30,13 +30,13 @@ then
 
 fi
 
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>> $Log_file
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>$Log_file
 
-validate $? "Setting up the NodeJS Repo"
+validate $? "Setting up the nodejs Repo"
 
 yum install nodejs -y &>>$Log_file
 
-validate $? "Installing NodeJS"
+validate $? "Installing Nodejs"
 
 id roboshop &>>$Log_file
 
@@ -50,46 +50,35 @@ else
 
 fi 
 
-cd /app &>>$Log_file
-
-if [ $? -ne 0 ]
-then 
-    echo -e  " $R ERROR : No such File/Directory.$N Lets create the Directory......"
-    mkdir /app &>>$Log_file
-    validate $? "Creating a directory"
-else 
-  echo "Directory Created already"
-
-fi
-
 curl -L -o /tmp/cart.zip https://roboshop-builds.s3.amazonaws.com/cart.zip &>>$Log_file
 
-validate $? "downloading Artifact"
+validate $? "Downloading cart Artifact"
 
-cd /app &>>$Log_file
+cd /app 
 
-validate $? "Moving into App Directory"
+validate $? "Moving to app directory"
 
-unzip -o /tmp/cart.zip &>>$Log_file
+unzip -o /tmp/cart.zip
 
-validate $? "Unzipping the Cart Artfact"
+validate $? "Unzipping the cart artifact"
 
 npm install &>>$Log_file
 
-validate $? "downloading Dependencies"
+validate $? "Downloading Dependencies"
 
 cp /home/centos/Roboshop/cart.service /etc/systemd/system/cart.service &>>$Log_file
 
-validate $? "Creating/copying systemd service for cart"
+validate $? "Copying/creating the systemd cart service"
 
 systemctl daemon-reload &>>$Log_file
 
-validate $? "Loading the Cart Service"
+validate $? "Loading the cart Service"
 
 systemctl enable cart &>>$Log_file
 
-validate $? "Enabling the cart Service"
+validate $? "Enabling the cart SErvice"
 
 systemctl start cart &>>$Log_file
 
-validate $? "Starting the cart Service"
+validate $? "starting the cart SErvice"
+
