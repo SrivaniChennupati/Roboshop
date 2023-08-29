@@ -51,9 +51,9 @@ validate $? "Starting the Mysql"
 
 mysql_secure_installation --set-root-pass RoboShop@1 &>>$Log_file
 
-validate $? " changing the default root password i"
+validate $? "changing the default root password"
 
-mysql -uroot -pRoboShop@1 &>>$Log_file
+mysql $(-uroot -pRoboShop@1) &>>$Log_file
 
 validate $? "checking the new password working or not"
 
