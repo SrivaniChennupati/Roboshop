@@ -70,7 +70,7 @@ cd /app &>>$Log_file
 
 validate $? "Moving into App Directory"
 
-unzip /tmp/user.zip &>>$Log_file
+unzip -o /tmp/user.zip &>>$Log_file
 
 validate $? "Unzipping the User Artfact"
 
