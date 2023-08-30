@@ -9,8 +9,10 @@ Instance_Type="t2.micro"
 for i in "${Instances[@]}"
 do 
  #echo "$i"
+ Instance_Type="t2.micro"
 
- if [[ "$i" == "Mongodb" || "$i" == "MySQL" ]]
+ if [[ $i == "Mongodb" || $i == "MySQL" ]]
+
  then
     $Instance_Type="t3.micro"
  else 
