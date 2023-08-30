@@ -38,7 +38,7 @@ id roboshop &>>$Log_file
 
 if [ $? -ne 0 ]
 then 
-    echo -e  " $R ERROR : No such User.$N Lets add the User......"
+    echo -e  "$R ERROR : No such User.$N Lets add the User......"
     useradd roboshop &>>$Log_file
 else 
 
