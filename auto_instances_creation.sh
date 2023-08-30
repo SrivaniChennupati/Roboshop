@@ -20,9 +20,9 @@ do
  fi   
 
 echo "Creating Instance : $i"
-private_ip=aws ec2 run-instances --image-id $Image_id --instance-type $Instance_Type --security-group-ids $Securitygroup_id --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress'
+private_ip=$(aws ec2 run-instances --image-id $Image_id --instance-type $Instance_Type --security-group-ids $Securitygroup_id --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress')
 
- echo "created $i Instance : $private_ip"
+ echo "created $i Instance :$private_ip"
 
  aws route53 change-resource-record-sets --hosted-zone-id Z00901702AI0X0PSLUZQF --change-batch '
 
