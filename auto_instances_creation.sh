@@ -12,17 +12,17 @@ do
  #echo "$i"
  #Instance_Type="t2.micro"
 
-  if [[ $i == "mongodb" || $i == "mysql" ]]
+  if [[ $i == "Mongodb" || $i == "MySQL" ]]
     then
         INSTANCE_TYPE="t3.micro"
     else
         INSTANCE_TYPE="t2.micro"
+   fi     
 
 echo "Creating Instance : $i"
-private_ip=$(aws ec2 run-instances --image-id $Image_id --instance-type $Instance_Type --security-group-ids $Securitygroup_id --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress')
+private_ip=$(aws ec2 run-instances --image-id $Image_id --instance-type $INSTANCE_TYPE --security-group-ids $Securitygroup_id --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" | jq -r '.Instances[0].PrivateIpAddress')
 
  echo "created $i Instance :$private_ip"
 
- 
 done
 
