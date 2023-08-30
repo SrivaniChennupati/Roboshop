@@ -29,7 +29,7 @@ private_ip=$(aws ec2 run-instances --image-id $Image_id --instance-type $INSTANC
             "Changes": [{
             "Action": "CREATE",
                         "ResourceRecordSet": {
-                            "Name": "'$i.$DOMAIN_NAME'",
+                            "Name": "'$i.$DOMAIN_NAME'.com",
                             "Type": "A",
                             "TTL": 300,
                             "ResourceRecords": [{ "Value": "'$private_ip'"}]
