@@ -24,5 +24,24 @@ private_ip=$(aws ec2 run-instances --image-id $Image_id --instance-type $INSTANC
 
  echo "created $i Instance :$private_ip"
 
+ aws route53 change-resource-record-sets --hosted-zone-id Z00901702AI0X0PSLUZQF --change-batch '{
+  "Comment": "CREATE/DELETE/UPSERT a record ",
+  "Changes": [
+    {
+      "Action": "CREATE",
+      "ResourceRecordSet": {
+        "Name": "'$i.$domain_name'.com",
+        "Type": "A",
+        "TTL": 300,
+        "ResourceRecords": [
+          {
+            "Value": "'$private_ip'"
+          }
+        ]
+      }
+    }
+  ]
+}
+'
 done
 
