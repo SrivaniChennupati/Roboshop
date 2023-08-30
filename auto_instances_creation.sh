@@ -4,7 +4,7 @@ Instances=("Web","Mongodb","Catalogue","Redis","User","Cart","MySQL","Shipping",
 
 for i in "${Instances[@]}"
 do 
- echo "$i"
+ echo "$i \n"
 
 done
 
