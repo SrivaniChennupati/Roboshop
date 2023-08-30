@@ -10,7 +10,7 @@ for i in "${Instances[@]}"
 do 
  #echo "$i"
 
- if [[ $i == "Mongodb" || $i == "MySQL" ]]
+ if [[ "$i" == "Mongodb" || "$i" == "MySQL" ]]
  then
     $Instance_Type="t3.micro"
  else 
