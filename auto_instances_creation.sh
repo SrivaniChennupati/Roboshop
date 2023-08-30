@@ -10,7 +10,7 @@ for i in "${Instances[@]}"
 do 
  #echo "$i"
 
- if [ [ $i == "Mongodb" || $i == "MySQL" ] ]
+ if [ $i == "Mongodb" || $i == "MySQL" ]
  then
     $Instance_Type="t3.micro"
  else 
@@ -20,7 +20,6 @@ do
 
 echo "Creating Instance : $i"
 aws ec2 run-instances --image-id $Image_id --instance-type $Instance_Type --security-group-ids $Securitygroup_id --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" 
-
 
 done
 
